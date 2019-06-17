@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  serialize :questions, Array
 
   extend FriendlyId
   friendly_id :game_slug, use: [:slugged, :finders]
