@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  before_action :set_game, only: :show_game
+  before_action :set_game, except: :create_game
 
   def create_game
     questions_ids = Question.order("RANDOM()").limit(10).map(&:id)
@@ -10,7 +10,21 @@ class GamesController < ApplicationController
   end
 
   def show_game
-    @question = Question.find(@game.questions[@game.question_number])
+    @question = Question.find(@game.questions[@game.question_number]) if @game.question_number < 10
+  end
+
+  def next_question
+    if params[:option].present?
+      @question = Question.find(@game.questions[@game.question_number])
+      @game.score += 1 if params[:option] == @question.answer
+      @game.question_number += 1
+
+      if @game.save
+        redirect_to show_game_path(@game)
+      end
+    else
+      redirect_to show_game_path(@game)
+    end
   end
 
   private

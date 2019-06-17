@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get 'create_game', to: 'games#create_game'
   get ':id', to: 'games#show_game', as: :show_game
+  get ':id/next_question', to: 'games#next_question', as: :next_question
 end
