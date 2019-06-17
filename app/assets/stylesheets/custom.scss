@@ -1,6 +1,6 @@
 body {
   background-color: #EFF3F6;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .navbar {
@@ -12,4 +12,9 @@ body {
 
 .question-option {
   background-color: #E6EAEE;
+}
+
+.game-score {
+  color: #B54C0D;
+  font-size: 3rem;
 }
