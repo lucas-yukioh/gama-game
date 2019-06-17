@@ -1,0 +1,29 @@
+<div class="row justify-content-center mx-0">
+  <div class="col-10">
+    <h4><%= @question.title %></h4>
+  </div>
+  <div class="col-2">
+    <h4><span class="badge badge-info"><%= @question.category %></span></h4>
+  </div>
+</div>
+<div class="row justify-content-center mx-0 my-3">
+  <div class="col-10 my-2 py-2 pl-5 question-option">
+    <input type="radio" class="form-check-input" name="optradio"><%= @question.option1 %>
+  </div>
+  <div class="col-10 my-2 py-2 pl-5 question-option">
+    <input type="radio" class="form-check-input" name="optradio"><%= @question.option2 %>
+  </div>
+  <div class="col-10 my-2 py-2 pl-5 question-option">
+    <input type="radio" class="form-check-input" name="optradio"><%= @question.option3 %>
+  </div>
+  <div class="col-10 my-2 py-2 pl-5 question-option">
+    <input type="radio" class="form-check-input" name="optradio"><%= @question.option4 %>
+  </div>
+</div>
+<div class="row justify-content-end">
+  <div class="col-2">
+    <%= link_to '#', class: "btn btn-lg btn-success mt-3" do %>
+      Next
+    <% end %>
+  </div>
+</div>
